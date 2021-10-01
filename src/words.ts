@@ -62,7 +62,7 @@ function isWord(word: string): boolean {
 }
 
 function addWord(word: string, definition: string, example: string): string {
-    if (words.find(w => w.word === word)) {
+    if (words.find(w => w.word === word.toLowerCase())) {
         return `${word} already exists in the dictionary`
     } else {
         words.push({
@@ -75,8 +75,9 @@ function addWord(word: string, definition: string, example: string): string {
 }
 
 function removeWord(word: string): string {
-    if (words.find(w => w.word === word)) {
-        words.splice(words.indexOf(words.find(w => w.word === word)), 1)
+    let wordToLowerCase = word.toLowerCase()
+    if (words.find(w => w.word === wordToLowerCase)) {
+        words.splice(words.indexOf(words.find(w => w.word === wordToLowerCase)), 1)
         return `${word} has been removed from the dictionary`
     } else {
         return `${word} does not exist in the dictionary`
@@ -84,8 +85,9 @@ function removeWord(word: string): string {
 }
 
 function getWord(word: string): any {
-    if (words.find(w => w.word === word)) {
-        return words.find(w => w.word === word.toLowerCase())
+    let wordToLowerCase = word.toLowerCase()
+    if (words.find(w => w.word === wordToLowerCase)) {
+        return words.find(w => w.word === wordToLowerCase)
     } else {
         return `${word} does not exist in the dictionary`
     }
@@ -96,8 +98,9 @@ function getAllWords(): {} {
 }
 
 function getExample(word: string): string {
-    if (words.find(w => w.word === word)) {
-        return `Example for ${word}: ${words.find(w => w.word === word).example}`
+    let wordToLowerCase = word.toLowerCase()
+    if (words.find(w => w.word === wordToLowerCase)) {
+        return `Example for ${word}: ${words.find(w => w.word === wordToLowerCase).example}`
     } else {
         return `Cannot find an example for ${word}, ${word} does not exist in the dictionary`
     }
@@ -110,8 +113,9 @@ function getAllExamples(): any {
 }
 
 function getDefinition(word: string): string {
-    if (words.find(w => w.word === word)) {
-        return `Definition for ${word}: ${words.find(w => w.word === word).definition}`
+    let wordToLowerCase = word.toLowerCase()
+    if (words.find(w => w.word === wordToLowerCase)) {
+        return `Definition for ${word}: ${words.find(w => w.word === wordToLowerCase).definition}`
     } else {
         return `Cannot find a definition for ${word}, ${word} does not exist in the dictionary`
     }
