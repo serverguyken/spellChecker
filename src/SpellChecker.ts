@@ -48,14 +48,14 @@ const checkWord = (w: string) => {
         return "Please provide a word for suggestion"
     }
     let suggestion: string = "";
-    let word = w.toLowerCase()
+    let wordToLowerCase = w.toLowerCase()
     let wSplit = word.split("");
     for (word in wSplit) {
-        if(isWord(w)) {
+        if(isWord(wordToLowerCase)) {
             suggestion = "Correct spelling"
         }
         else {
-            suggestion = findClosestWords(w)
+            suggestion = findClosestWords(wordToLowerCase)
         }
     }
     return suggestion
