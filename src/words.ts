@@ -63,7 +63,7 @@ function isWord(word: string): boolean {
 
 function addWord(word: string, definition: string, example: string): string {
     if (words.find(w => w.word === word)) {
-        return `${word} is already added to the dictionary`
+        return `${word} already exists in the dictionary`
     } else {
         words.push({
             word,
